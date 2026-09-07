@@ -1,4 +1,5 @@
 import hashlib
+from src.bigrams import get_bigrams
 
 
 def get_hash_positions(bigram: str, L: int, K: int) -> list[int]:
@@ -18,7 +19,14 @@ def insert_bigram(bit_array: list[int], bigram: str, L: int, K: int) -> None:
         bit_array[position] = 1
 
 
+def get_fingerprint(password: str, L: int, K: int) -> list[int]:
+    bit_array = [0] * L
+    bigrams = get_bigrams(password)
+    for bigram in bigrams:
+        insert_bigram(bit_array, bigram, L, K)
+    return bit_array
+
+
 if __name__ == "__main__":
-    bit_array = [0] * 1000
-    insert_bigram(bit_array, "ca", L=1000, K=20)
-    print(sum(bit_array))
+    fingerprint = get_fingerprint("cat", L=1000, K=20)
+    print(sum(fingerprint))
