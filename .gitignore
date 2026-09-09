@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw dataset file (large, reproducible via filter_dataset.py)
+data/10k-most-common-RAW.txt
