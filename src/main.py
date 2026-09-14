@@ -3,7 +3,7 @@ from src.dataset import load_passwords, precompute_fingerprints, find_closest_ma
 
 L = 1000
 K = 20
-THRESHOLD = 0.7
+THRESHOLD = 0.4
 
 
 def validate_password(password: str) -> bool:

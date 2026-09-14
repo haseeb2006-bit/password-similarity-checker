@@ -1,4 +1,4 @@
-def filter_dataset(input_path: str, output_path: str, target_count: int = 800, min_len: int = 6, max_len: int = 16) -> None:
+def filter_dataset(input_path: str, output_path: str, target_count: int = 800, min_len: int = 4, max_len: int = 16) -> None:
     seen = set()
     filtered = []
 
